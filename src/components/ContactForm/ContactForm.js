@@ -11,8 +11,9 @@ import {
 import * as Yup from 'yup';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContactsValue } from 'components/Redux/PhoneBook/selectors';
-import { addContacts } from 'components/Redux/PhoneBook/operations';
+
+import { addContacts } from 'components/Redux/contacts/operations';
+import { selectContactsValue } from 'components/Redux/selectors';
 
 const PhoneBookSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').required('Required'),

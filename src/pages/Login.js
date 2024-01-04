@@ -1,13 +1,12 @@
 import { LoginForm } from 'components/LoginForm/LoginForm';
-import { Helmet } from 'react-helmet';
+import { ContactsContainer, Container } from './Contacts.styled';
 
 export default function Login() {
   return (
-    <div>
-      <Helmet>
-        <title>Login</title>
-      </Helmet>
-      <LoginForm />
-    </div>
+    <Container>
+      <ContactsContainer>
+        <LoginForm />
+      </ContactsContainer>
+    </Container>
   );
 }

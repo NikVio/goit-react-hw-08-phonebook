@@ -1,12 +1,11 @@
+import { ContactsContainer, Container } from './Contacts.styled';
+
 export default function Home() {
   return (
-    <div>
-      <h1>
-        Task manager welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </h1>
-    </div>
+    <Container>
+      <ContactsContainer>
+        <h1>Welcome to Phonebook </h1>
+      </ContactsContainer>
+    </Container>
   );
 }

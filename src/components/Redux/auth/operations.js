@@ -4,7 +4,7 @@ import {
   loginUser,
   logOutUser,
   registerUser,
-  reloadUser,
+  reloadPage,
   setAuthHeader,
 } from 'components/Services/axios';
 
@@ -46,17 +46,11 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    if (!persistedToken) {
-      return thunkAPI.rejectWithValue('No valid token');
-    }
-    console.log('refresh');
-
+    const { token } = thunkAPI.getState().auth;
+    if (!token) return thunkAPI.rejectWithValue('Not valid token');
+    setAuthHeader(token);
     try {
-      setAuthHeader(persistedToken);
-      const refUs = await reloadUser();
+      const refUs = await reloadPage();
       return refUs;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

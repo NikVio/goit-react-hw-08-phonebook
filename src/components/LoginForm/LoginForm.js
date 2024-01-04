@@ -19,20 +19,11 @@ const PhoneBookSchema = Yup.object().shape({
       'Invalid email address'
     )
     .required('Required'),
+  password: Yup.string().min(7, 'Too short').required('Required'),
 });
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  //   const handleCheckContact = values => {
-  //     const checkContact = contacts.some(
-  //       contact => contact.name.toLowerCase() === values.name.toLowerCase()
-  //     );
-  //     if (checkContact) {
-  //       alert(`${values.name} is already in contacts`);
-  //       return;
-  //     }
-  //     dispatch(addContacts(values));
-  //   };
 
   return (
     <Formik
@@ -48,12 +39,12 @@ export const LoginForm = () => {
     >
       <Form>
         <FormGroup>
-          Email <Field name="email" />
+          Email <Field name="email" type="email" variant="outline" />
           <ErrorMessage name="email" component="span" />
         </FormGroup>
 
         <FormGroup>
-          Password <Field name="password" />
+          Password <Field name="password" type="password" variant="outline" />
           <ErrorMessage name="password" component="span" />
         </FormGroup>
 

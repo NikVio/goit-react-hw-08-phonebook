@@ -32,7 +32,7 @@ export const logOutUser = async () => {
   return response.data;
 };
 
-export const reloadUser = async () => {
+export const reloadPage = async () => {
   const response = await axios.get('/users/current');
   return response.data;
 };

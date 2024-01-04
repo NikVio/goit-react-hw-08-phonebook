@@ -1,13 +1,12 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
-import { Helmet } from 'react-helmet';
+import { ContactsContainer, Container } from './Contacts.styled';
 
 export default function Register() {
   return (
-    <div>
-      <Helmet>
-        <title>Registration</title>
-      </Helmet>
-      <RegisterForm />
-    </div>
+    <Container>
+      <ContactsContainer>
+        <RegisterForm />
+      </ContactsContainer>
+    </Container>
   );
 }

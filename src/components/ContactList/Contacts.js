@@ -1,7 +1,7 @@
 import { NameContact, DeleteBtn, WrapperContact } from './Contacts.styled';
 import { useDispatch } from 'react-redux';
 
-import { deletedContacts } from 'components/Redux/PhoneBook/operations';
+import { deletedContacts } from 'components/Redux/contacts/operations';
 
 export const Contacts = ({ el: { name, number, id } }) => {
   const dispatch = useDispatch();
